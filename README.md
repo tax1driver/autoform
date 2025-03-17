@@ -24,39 +24,43 @@ export default function Layout({ children }: { children: ReactNode }) {
 Then, define a schema such as (Zod method uses module augmentation, read more below):
 ```tsx
 const schema = z.object({
-    str: z.string().meta({
-        name: "Input some data",
-        description: "A description",
-        placeholder: "hello",
-        defaultValue: "asdf"
+  str: z.string().meta({
+    name: "Input some data",
+    description: "A description",
+    placeholder: "hello",
+  }),
+  anObject: z.object({
+    anotherStr: z.string().meta({
+      name: "Another string",
+      description: "Another description",
+      placeholder: "world",
     }),
-    anObject: z.object({
-        anotherStr: z.string().meta(),
-        check: z.boolean().meta({
-            description: "Hello"
-        }),
-        combo: z.union([z.literal("hi"), z.literal("hello")]).meta({
-            description: "combobox!",
-            options: [
-                {
-                    value: "hi",
-                    label: <WavesIcon size={16} />
-                },
-                {
-                    value: "hello",
-                    label: "Hello!!!"
-                }
-            ]
-        })
-    }).meta({
-        name: "An object",
-        description: "A description"
+    check: z.boolean().meta({
+      description: "Checkbox description"
     }),
-    anotherObject: z.object({
-        checkMe: z.boolean(),
-        aDate: z.coerce.date()
-    }),
-})
+    combo: z.union([z.literal("first"), z.literal("second")]).meta({
+      description: "combobox!",
+      options: [
+        {
+          value: "first",
+          label: "Option 1"
+        },
+        {
+          value: "second",
+          label: "Option 2"
+        }
+      ]
+    })
+  }).meta({
+    name: "An object",
+    description: "A description"
+  }),
+  objectWithoutMeta: z.object({
+    checkMe: z.boolean(),
+    aDate: z.coerce.date()
+  }),
+});
+
 ```
 
 In your component, create a `react-hook-form` form:
