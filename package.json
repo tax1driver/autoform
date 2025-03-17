@@ -1,0 +1,36 @@
+{
+  "name": "autoform",
+  "version": "1.0.0",
+  "description": "Automatically create forms from validator schemas",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": {
+    "name": "tax1driver",
+    "email": "fajerone@protonmail.com"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "contributors": [],
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-hook-form": "^7.54.2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.10"
+  }
+}

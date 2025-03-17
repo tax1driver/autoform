@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "target": "es2019",
+    "declaration": true,
+    "outDir": "./dist",
+    "strictNullChecks": true,
+    "jsx": "react-jsx",
+    "paths": {}
+  },
+  "include": [
+    "src/**/*"  
+  ]
+}
