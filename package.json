@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Automatically create forms from validator schemas",
   "type": "module",
-  "license": "AGPL-version-3.0",
+  "license": "MIT",
   "private": false,
   "engines": {
     "node": ">= 14.0.0",

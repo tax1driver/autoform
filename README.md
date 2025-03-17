@@ -2,7 +2,7 @@
 Automatically generate form interfaces using schema validation libraries' schemas & React Hook Form. This package is modular and usage with any validation or UI library is possible. 
 
 ## Disclaimer
-This project is in early WIP stage and is not currently available on `NPM`. 
+This project is in early WIP stage.
 
 ## Installing
 ```
