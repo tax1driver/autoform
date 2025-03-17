@@ -1,5 +1,5 @@
 {
-  "name": "autoform",
+  "name": "@fajerone/autoform",
   "version": "1.0.0",
   "description": "Automatically create forms from validator schemas",
   "type": "module",
@@ -11,11 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
-  },
-  "author": {
-    "name": "tax1driver",
-    "email": "fajerone@protonmail.com"
+    "url": "https://github.com/tax1driver/autoform"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -2,13 +2,18 @@
 Automatically generate form interfaces using schema validation libraries' schemas & React Hook Form. This package is modular and usage with any validation or UI library is possible. 
 
 ## Disclaimer
-This project is in early WIP stage.
+This project is in early WIP stage and is not currently available on `NPM`. 
+
+## Installing
+```
+npm install @fajerone/autoform
+```
 
 ## Usage
 Firstly, provide a resolver and a component set to use for form generation. 
 `zodProvider` and `shadcnComponentSet` are pre-defined and available in the repository. However, as we would like to not force you to install additional packages, those are not included in the main package.
 ```tsx
-import { AutoFormProvider } from "autoform";
+import { AutoFormProvider } from "@fajerone/autoform";
 import { zodProvider } from "../lib/zod-provider";
 import { shadcnFormComponentSet } from "../lib/form-components";
 
@@ -54,7 +59,7 @@ const schema = z.object({
   }).meta({
     name: "An object",
     description: "A description"
-  }),
+  }),   
   objectWithoutMeta: z.object({
     checkMe: z.boolean(),
     aDate: z.coerce.date()
