@@ -1,6 +1,6 @@
 {
   "name": "@fajerone/autoform",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Automatically create forms from validator schemas",
   "type": "module",
   "license": "MIT",
