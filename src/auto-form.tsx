@@ -4,6 +4,7 @@ import { FieldMap, FieldRenderParentComponent, FieldType, FieldComponent, FieldR
 import { FieldContextType, FormContextValues } from "./types/form";
 import { FormContext } from "./context/form";
 import { AutoFormContext } from "./context/auto-form";
+import { zodProvider } from "./zod";
 
 function useFormContext() {
     const context = useContext(FormContext);
@@ -58,7 +59,8 @@ export function AutoForm({ form, schema, className, children, onSubmit, onInvali
     const autoFormContext = useContext(AutoFormContext);
     if (!autoFormContext) throw new Error("AutoFormContext does not exist");
 
-    const { resolver, componentSet } = autoFormContext;
+    const { componentSet } = autoFormContext;
+    const resolver = zodProvider;
 
     const [context, setContext] = useState<FormContextValues>({
         fields: resolver(schema),

@@ -1,5 +1,6 @@
 import { z, ZodType } from "zod";
-import { FieldMap, FieldMetadata, InputType } from "autoform";
+import { FieldMetadata, FieldMap } from "./types/field";
+import { InputType } from "./types/input";
 
 declare module 'zod' {
     interface ZodType {

@@ -1,5 +1,5 @@
 # autoform
-Automatically generate form interfaces using schema validation libraries' schemas & React Hook Form. This package is modular and usage with any validation or UI library is possible. 
+Automatically generate form interfaces using Zod schemas & React Hook Form. This package is modular and usage with any UI library is possible. 
 
 ## Disclaimer
 This project is in early WIP stage.
@@ -10,8 +10,7 @@ npm install @fajerone/autoform
 ```
 
 ## Usage
-Firstly, provide a resolver and a component set to use for form generation. 
-`zodProvider` and `shadcnComponentSet` are pre-defined and available in the repository. However, as we would like to not force you to install additional packages, those are not included in the main package.
+Firstly, provide a component set to use for form generation. and `shadcnComponentSet` are pre-defined and available in the repository. However, as we would like to not force you to install additional packages, those are not included in the main package.
 ```tsx
 import { AutoFormProvider } from "@fajerone/autoform";
 import { zodProvider } from "../lib/zod-provider";
@@ -19,7 +18,7 @@ import { shadcnFormComponentSet } from "../lib/form-components";
 
 export default function Layout({ children }: { children: ReactNode }) {
     return (
-        <AutoFormProvider resolver={zodProvider} componentSet={shadcnFormComponentSet}>
+        <AutoFormProvider componentSet={shadcnFormComponentSet}>
             {children}
         </AutoFormProvider>
     )
@@ -77,9 +76,21 @@ const form = useForm({
 
 Finally, you can render the form by doing:
 ```tsx
-<AutoForm form={form} schema={schemax} onSubmit={console.log} onInvalid={console.log}>
+<AutoForm form={form} schema={schema} onSubmit={console.log} onInvalid={console.log}>
     <Button type="submit">submit</Button>
 </AutoForm>
+```
+
+```tsx
+<AutoForm 
+  form={form}
+  schema={schema}
+  onSubmit={console.log}
+  onInvalid={console.log}
+  onChange={console.log}
+  
+>
+
 ```
 
 which produces the following result:
